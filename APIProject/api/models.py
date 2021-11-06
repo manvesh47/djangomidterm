@@ -28,3 +28,9 @@ class NewModels(models.Model):
     UID = models.CharField(max_length=10)
     Doctor = models.BooleanField()
     gender_choice = models.CharField(max_length=20,choices=gender,default='1')
+
+class Signup(models.Model):
+    name = models.CharField(max_length=20)
+    email = models.TextField()
+    mobile = models.TextField()
+    pwd = models.TextField()

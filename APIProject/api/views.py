@@ -1,6 +1,6 @@
 from django.shortcuts import render , HttpResponse
-from .models import Article,Articlo,NewModels
-from .serializers import ArticleSerializer,Articleserial,NewModelSerializer
+from .models import Article,Articlo,NewModels,Signup
+from .serializers import ArticleSerializer,Articleserial,NewModelSerializer,SignupSerializer
 from django.http import JsonResponse
 from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
@@ -30,6 +30,11 @@ class NewModelViews(viewsets.ModelViewSet):
     queryset = NewModels.objects.all()
     serializer_class = NewModelSerializer
 
+class SignupViews(viewsets.ModelViewSet):
+    queryset = Signup.objects.all()
+    serializer_class = SignupSerializer
+
+
 
 
 
@@ -45,6 +50,7 @@ class NewModelViews(viewsets.ModelViewSet):
 
 
 #using viewsets
+'''
 class ArticleViews(viewsets.ViewSet):
     def list(self,request):
         articles = Article.objects.all()
@@ -71,8 +77,8 @@ class ArticleViews(viewsets.ViewSet):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-
-
+'''
+'''
 class Articlelist(generics.GenericAPIView , mixins.ListModelMixin ,
                   mixins.CreateModelMixin):
     # we are using mixins rather than simple way of retrieving the data
@@ -103,6 +109,7 @@ class ArticleDetails(generics.GenericAPIView , mixins.ListModelMixin ,
 
 
 
+'''
 '''
 @api_view(['GET' , 'POST'])
 def article_list(request):

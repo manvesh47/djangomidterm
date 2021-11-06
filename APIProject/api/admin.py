@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article , Articlo , NewModels
+from .models import Article , Articlo , NewModels , Signup
 
 # Register your models here.
 #first way to register a model
@@ -19,6 +19,11 @@ class NewModel(admin.ModelAdmin):
     list_filter = ('UID','Doctor','gender_choice')
     list_display = ('UID','Doctor','gender_choice')
 
+
+@admin.register(Signup)
+class Signup(admin.ModelAdmin):
+    list_filter = ('name','email','mobile','pwd')
+    list_display = ('name', 'email', 'mobile', 'pwd')
 
 
 

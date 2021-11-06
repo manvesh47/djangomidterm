@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article,Articlo,NewModels
+from .models import Article,Articlo,NewModels,Signup
 
 #creating our serializer class and importing our model class from .models
 #here we are using modelserializers
@@ -17,4 +17,9 @@ class NewModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewModels
         fields = ['id','UID','Doctor','gender_choice']
+
+class SignupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Signup
+        fields = ['name','email','mobile','pwd']
 

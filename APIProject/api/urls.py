@@ -1,5 +1,5 @@
 from django.urls import path,include
-from .views import ArticleViews,ArticloViews,NewModelViews
+from .views import ArticleViews,ArticloViews,NewModelViews,SignupViews
 from rest_framework.routers import DefaultRouter
 #article_list , article_details
 
@@ -7,6 +7,7 @@ router = DefaultRouter()
 router.register('articles',ArticleViews,basename='articles')
 router.register('articlo',ArticloViews,basename='articlo')
 router.register('Newmodels',NewModelViews,basename='Newmodels')
+router.register('Signup',SignupViews,basename='Signup')
 
 urlpatterns = [
     path('',include(router.urls)),
