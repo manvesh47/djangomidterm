@@ -13,6 +13,8 @@ gender = (
 class Article(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
+    name = models.TextField(max_length=50,default='none')
+    experience = models.TextField(max_length=50,default='none')
 
     #creating a def str to return the title
     def __str__(self):
@@ -34,3 +36,24 @@ class Signup(models.Model):
     email = models.TextField()
     mobile = models.TextField()
     pwd = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+class AdoptPet(models.Model):
+    name = models.CharField(max_length=40)
+    age = models.CharField(max_length=2)
+    breed = models.CharField(max_length=30)
+    description = models.CharField(max_length=100)
+
+
+
+class Pharmacy(models.Model):
+    name = models.CharField(max_length=40)
+    contact = models.CharField(max_length=40)
+    description = models.CharField(max_length=100)
+    location = models.CharField(max_length=40)
+
+
+
+

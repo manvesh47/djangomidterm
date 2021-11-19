@@ -1,6 +1,6 @@
 from django.shortcuts import render , HttpResponse
-from .models import Article,Articlo,NewModels,Signup
-from .serializers import ArticleSerializer,Articleserial,NewModelSerializer,SignupSerializer
+from .models import Article,Articlo,NewModels,Signup,AdoptPet,Pharmacy
+from .serializers import ArticleSerializer,Articleserial,NewModelSerializer,SignupSerializer,AdoptPetSerializer,PharmacySerializer
 from django.http import JsonResponse
 from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
@@ -33,6 +33,14 @@ class NewModelViews(viewsets.ModelViewSet):
 class SignupViews(viewsets.ModelViewSet):
     queryset = Signup.objects.all()
     serializer_class = SignupSerializer
+
+class AdoptPetViews(viewsets.ModelViewSet):
+    queryset = AdoptPet.objects.all()
+    serializer_class = AdoptPetSerializer
+
+class PharmacyViews(viewsets.ModelViewSet):
+    queryset = Pharmacy.objects.all()
+    serializer_class = PharmacySerializer
 
 
 
